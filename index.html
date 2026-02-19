@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBC AI Marketing Platform | We Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Bebas Neue', 'sans-serif'],
+            },
+            colors: {
+              wd: {
+                purple: '#7C3AED',
+                pink: '#E91E8C',
+                magenta: '#FF0066',
+                light: '#F5F5F5',
+                dark: '#1A1A1A',
+                gray: '#6B7280',
+                muted: '#9CA3AF',
+              }
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      @font-face {
+        font-family: 'Bebas Neue';
+        src: url('/BebasNeueCyrillic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      body {
+        background-color: #FFFFFF;
+        color: #1A1A1A;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #f5f5f5; }
+      ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInLeft {
+        from { opacity: 0; transform: translateX(-30px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes fadeInRight {
+        from { opacity: 0; transform: translateX(30px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      .anim-fade-up { animation: fadeInUp 0.6s ease-out both; }
+      .anim-fade-up-d1 { animation: fadeInUp 0.6s ease-out 0.1s both; }
+      .anim-fade-up-d2 { animation: fadeInUp 0.6s ease-out 0.2s both; }
+      .anim-fade-up-d3 { animation: fadeInUp 0.6s ease-out 0.3s both; }
+      .anim-fade-up-d4 { animation: fadeInUp 0.6s ease-out 0.4s both; }
+      .anim-fade-up-d5 { animation: fadeInUp 0.6s ease-out 0.5s both; }
+      .anim-fade-up-d6 { animation: fadeInUp 0.6s ease-out 0.6s both; }
+      .anim-fade-left { animation: fadeInLeft 0.6s ease-out both; }
+      .anim-fade-right { animation: fadeInRight 0.6s ease-out 0.2s both; }
+      .anim-scale { animation: scaleIn 0.5s ease-out both; }
+      .anim-scale-d1 { animation: scaleIn 0.5s ease-out 0.15s both; }
+      .anim-scale-d2 { animation: scaleIn 0.5s ease-out 0.3s both; }
+
+      .wd-gradient-bg {
+        background-image: url('/main-bg.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .wd-gradient-text {
+        background: linear-gradient(135deg, #7C3AED, #E91E8C);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Pink/purple gradient spray blobs */
+      .spray-bg {
+        position: relative;
+        overflow: hidden;
+      }
+      .spray-bg::before,
+      .spray-bg::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .spray-bg::before {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, #E91E8C, transparent 70%);
+        top: -150px;
+        right: -100px;
+      }
+      .spray-bg::after {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, #7C3AED, transparent 70%);
+        bottom: -100px;
+        left: -80px;
+      }
+      .spray-bg > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Variant: left spray only */
+      .spray-left {
+        position: relative;
+        overflow: hidden;
+      }
+      .spray-left::before {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(100px);
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(circle, #E91E8C, transparent 70%);
+        top: -200px;
+        left: -200px;
+      }
+      .spray-left > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Variant: right spray only */
+      .spray-right {
+        position: relative;
+        overflow: hidden;
+      }
+      .spray-right::before {
+        content: '';
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: 0.13;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(circle, #7C3AED, transparent 70%);
+        bottom: -150px;
+        right: -150px;
+      }
+      .spray-right > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .accent-line {
+        background: linear-gradient(90deg, #7C3AED, #E91E8C);
+        height: 2px;
+      }
+
+      .accent-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #7C3AED;
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
